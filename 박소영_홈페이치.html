@@ -1,0 +1,601 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>PURAPY</title>
+   <style>
+  *{margin:0; padding:0;} /* 초기화 */
+       
+     body, html {
+    height: 100%;
+         margin: 0 auto;
+         width: 1000px;
+}
+       div {display:block;}
+       li{list-style: none;}
+       a {text-decoration:none;}
+
+       
+/* The hero image */
+.hero-image {
+    
+    clear:both;
+    /* The image used */
+    
+    background-image: url("smoke_1.jpg");
+   
+    /* Set a specific height */
+    height: 500px;
+    width: 1000px;
+    margin: 0 auto ;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    position:
+    
+}
+   .hero-text > button{    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: white;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;}       
+       .hero-text > button:hover {background-color:black;}
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 35px;
+}
+  .hero-text>p{font-size: 20px;}
+   </style>
+   <!--네비게이션-->
+   <style>
+       
+    nav {
+            position: relative;
+            display: flex;
+            justify-content:center;
+            padding-top:5px;
+            box-sizing: border-box;
+
+            
+        }
+       #nava{
+           position: relative;
+           width: 1000px;
+           height: 50px;
+           background-color: white;
+       }
+        .nav02 {
+            
+        }
+
+
+        /* common */
+        nav ul {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            
+        }
+       nav ul::after {
+                display: block;
+                clear: both;
+                content: '';
+
+            }
+
+            nav ul li {
+                position: relative;
+                float: left;
+                border-right: 1px solid lightgray;
+                border-left: 1px solid lightgray;
+            }
+
+                nav ul li:not(:first-child) {
+                    border-left: none;
+                }
+
+                nav ul li:hover {
+                    background-color: rgba(255,255,255,.3);
+                }
+
+                nav ul li a {
+                    display: inline-block;
+                    padding: 1em 4em;
+                    color: black;
+                    font:  15px/1 'Lato', sans-serif;
+                    text-align: center;
+                    text-decoration: none;
+                    white-space: nowrap;
+                }
+
+            nav ul ul {
+                position: absolute;
+                top: 100%;
+                left: -2px;
+            }
+
+                nav ul ul li {
+                    float: none;
+                    margin: 0;
+
+                }
+
+                    nav ul ul li:not(:first-child) {
+                        border: 1px solid #fff;
+                        border-top: none;
+                    }
+
+                nav ul ul ul {
+                    position: absolute;
+                    top: -2px;
+                    left: 100%;
+                }
+       nav a:hover{background-color:black; color:white;opacity:0.3;}
+
+        /* DEMO #2 */
+        .nav02 ul ul {
+            visibility: hidden;
+            opacity: 0;
+            transition: .2s ease-in-out;
+        }
+
+        .nav02 ul li:hover > ul {
+            visibility: visible;
+            opacity: 1;
+        }
+       
+       
+    </style>
+   
+   
+   <style>
+        #content {overflow: hidden;}
+        #main-section{ float:left; width:710px;}
+        #main-aside {width:200px; padding-top:220px; position:fixed; margin-left:720px; }
+        /* 좌측 내용물 */
+        article { padding: 10px 20px 10px;
+                  border-bottom: 1px solid #c8c8c8; }
+        .article-header{ padding:20px 0;}
+        .article-title{ font-size:25px; font-weight:500; padding-bottom:10px;}
+        .article-date { font-size:13px;}
+        .article-body{ font-size:14px;}
+        .article-body2 { padding-top:200px;}
+        .article-body img { width:650px; }
+       
+        
+        
+        .thumbnail img {width:100px;}
+        /* 우측 구성 */
+        #content > #main_aside {
+            width: 750px;
+            float: right;
+           
+        }
+        #main-aside input:nth-of-type(1) { display: none;}
+        #main-aside input:nth-of-type(1) ~ div:nth-of-type(1) {display:none;}
+        #main-aside input:nth-of-type(1):checked ~ div:nth-of-type(1) { display: block; }
+
+        #main-aside input:nth-of-type(2) { display: none; }
+        #main-aside input:nth-of-type(2) ~ div:nth-of-type(2) {display:none;}
+        #main-aside input:nth-of-type(2):checked ~ div:nth-of-type(2) {display:block;}
+
+        section.button {
+            overflow: hidden;
+        }
+        section.button > label {  /*수평정렬*/
+             display: block;
+             float: left;
+             /*크기 및 글자 위치 지정*/
+             width: 100px;
+             height: 30px;
+             line-height: 30px;
+             text-align: center;
+             /*테두리 지정*/
+             box-sizing: border-box;
+             border: 1px solid #c8c8c8;
+             /*색상 지정*/
+             background: black;
+             color: white;
+            }
+        .article-body2 > img {width:400px; }
+        
+        
+        .description {float:left;
+                      margin:10px 20px;
+        }
+       
+
+        .thumbnail { margin-left: 10px;}
+        #main-aside input:nth-of-type(1):checked ~ section.buttons > label:nth-of-type(1) {
+            background: white;
+            color: black;
+        }
+        
+
+        #main-aside input:nth-of-type(2):checked ~ section.button > label:nth-of-type(2) {
+            background: white;
+            color: black;
+        }
+      
+        .aside-list { padding:10px 0 60px 0; border: 1px solid black;
+            border-top: none;}
+        .aside-list > h3 { font-size:15px; font-weight:600; }
+        .aside-list li a { margin-left:8px; font-size:13px; color:#6c6c6c;}
+        /* 상단GNB */
+        #main_header > #main_gnb {
+            position: absolute;
+            right: 0;
+            top: 0;
+            position: fixed;
+        }
+        
+        #main_gnb>ul{overflow:hidden;}
+        #main_gnb>ul>li{float:right;}
+        #main_gnb>ul>li>a{
+                display:block;
+                padding:2px 10px;
+                color:#9c9c9c;
+            }
+        #main_gnb>ul>li>a:hover{
+            color:black;
+        }
+        #main-footer {padding:10px;}
+    </style>
+
+    
+  
+   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.outer-menu-item').hover(function () {
+                $(this).find('.inner-menu').show();
+            }, function () {
+                $(this).find('.inner-menu').hide();
+            });
+        });
+    </script>
+    
+    <!--슬라이드-->
+   <style>
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;}
+.mySlides {display:none}
+
+
+       
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: black;
+  font-size: 15px;
+  padding: 8px 12px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+       
+       .footer_p{
+           margin-top:15px;
+           height: 65px;
+           border-left: 1px solid lightgray;
+           }
+       .footer_p>p{
+           color:gray;
+           margin-left:20px;
+           font-size:12px;}
+       
+       
+</style>
+  
+</head>
+
+
+<body>    
+<div id="wrapper">
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1><strong>PURAPY</strong></h1>
+        <p>A Journey of Fragrancer</p>
+        <button>Hire me</button>
+      </div>
+    </div>
+<div id="nava">
+<nav class="nav02">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">About</a>
+                <ul>
+                    <li><a href="#">sub nav</a></li>
+                    <li><a href="#">sub nav</a></li>
+                    <li><a href="#">sub nav</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+                <ul>
+                    <li><a href="#">sub nav</a></li>
+                    <li>
+                        <a href="#">sub nav</a>
+                        <ul>
+                            <li><a href="#">child</a></li>
+                            <li><a href="#">child</a></li>
+                            <li><a href="#">child</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">sub nav</a>
+                        <ul>
+                            <li><a href="#">child</a></li>
+                            <li><a href="#">child</a></li>
+                            <li><a href="#">child</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Nav</a></li>
+            <li><a href="#">Nav</a></li>
+        </ul>
+    </nav>
+    </div>
+  </div>
+    
+            <div id="content">
+            <section id="main-section">
+               
+                   <article>
+                   
+                    <div class="article-body2">
+                       <div class="article-header">
+                           <h1 class="article-title"> WE ARE !</h1>
+                          <p class="article-date">Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+                       </div>
+                        <img src="./pakage.jpg" />
+                        <br />
+                        <br />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo justo ac lorem pretium vitae rhoncus lectus ullamcorper. Aliquam facilisis euismod diam sollicitudin commodo. Nunc sagittis sapien venenatis lorem vestibulum cursus pellentesque mi sodales. Donec pellentesque hendrerit turpis, vitae tempor nibh ultricies at. Aliquam consequat rutrum erat, vel sodales tellus sagittis at. Proin sollicitudin augue eu augue vehicula vitae bibendum odio porta. Aliquam elit arcu, venenatis in imperdiet ut, scelerisque non dolor. Donec in vulputate tortor. Fusce egestas rutrum mi quis ultricies. Vivamus blandit augue ac felis ullamcorper consectetur. Curabitur pretium fringilla neque, vitae cursus massa auctor vitae. Integer non massa sit amet lacus accumsan blandit. Vivamus fermentum tellus at justo iaculis eu tempus lorem venenatis. Suspendisse quis eros consectetur tellus posuere commodo. In hac habitasse platea dictumst.</p>
+                        <br />
+                        <p>Praesent orci quam, ornare sed scelerisque ac, porta a justo. Pellentesque quis magna sed magna vehicula semper ac ut enim. Duis ut mattis ligula. Mauris at sem elit. Vestibulum justo tortor, malesuada non tincidunt quis, feugiat ut metus. Maecenas varius neque ut diam ultrices scelerisque. Praesent lectus massa, tincidunt vel adipiscing non, vehicula ut magna. Cras quis lacinia ipsum. Sed consequat consectetur volutpat. Integer sed tortor risus. Donec accumsan ante vel justo porttitor volutpat.</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">PURAPY IS GOOD!</h1>
+                     <p class="article-date">Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+                    </div>
+                    <div class="article-body">
+                        <img src="./all_goods.jpg" />
+                        <br />
+                        <br />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo justo ac lorem pretium vitae rhoncus lectus ullamcorper. Aliquam facilisis euismod diam sollicitudin commodo. Nunc sagittis sapien venenatis lorem vestibulum cursus pellentesque mi sodales. Donec pellentesque hendrerit turpis, vitae tempor nibh ultricies at. Aliquam consequat rutrum erat, vel sodales tellus sagittis at. Proin sollicitudin augue eu augue vehicula vitae bibendum odio porta. Aliquam elit arcu, venenatis in imperdiet ut, scelerisque non dolor. Donec in vulputate tortor. Fusce egestas rutrum mi quis ultricies. Vivamus blandit augue ac felis ullamcorper consectetur. Curabitur pretium fringilla neque, vitae cursus massa auctor vitae. Integer non massa sit amet lacus accumsan blandit. Vivamus fermentum tellus at justo iaculis eu tempus lorem venenatis. Suspendisse quis eros consectetur tellus posuere commodo. In hac habitasse platea dictumst.</p>
+                        <br />
+                        <p>Proin ut fringilla sapien.</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">PURAPY TEA GOODS</h1>
+                       <p class="article-date">Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+                <br>
+                    </div>
+                    <div class="article-body">
+                        <img src="./all_tea.jpg">
+                        <br>
+                        <br>
+                        <p>
+                        
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo justo ac lorem pretium vitae rhoncus lectus ullamcorper. Aliquam facilisis euismod diam sollicitudin commodo. Nunc sagittis sapien venenatis lorem vestibulum cursus pellentesque mi sodales. Donec pellentesque hendrerit turpis, vitae tempor nibh ultricies at. Aliquam consequat rutrum erat, vel sodales tellus sagittis at. Proin sollicitudin augue eu augue vehicula vitae bibendum odio porta. Aliquam elit arcu, venenatis in imperdiet ut, scelerisque non dolor. Donec in vulputate tortor. Fusce egestas rutrum mi quis ultricies. Vivamus blandit augue ac felis ullamcorper consectetur. Curabitur pretium fringilla neque, vitae cursus massa auctor vitae. Integer non massa sit amet lacus accumsan blandit. Vivamus fermentum tellus at justo iaculis eu tempus lorem venenatis. Suspendisse quis eros consectetur tellus posuere commodo. In hac habitasse platea dictumst.
+                        </p>
+                        <br>
+                    </div>
+                    
+                </article>
+                
+            </section>
+            <!--
+            <aside id="main-aside">
+                <input id="first" type="radio" name="tab" checked="checked" />
+                <input id="second" type="radio" name="tab" />
+                <section class="button">
+                    <label for="first">BOOK</label>
+                    <label for="second">NEWS</label>
+                </section>
+                <div class="aside-list">
+                    <ul>
+                        <li class="item">
+                            <a href="#">
+                                <div class="thumbnail">
+                                    <img src="images/logo.jpg" />
+                                </div>
+                                <div class="description">
+                                     <strong>PURAPY</strong><p>GOOD!</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#">
+                                <div class="thumbnail">
+                                    <img src="images/logo.jpg" />
+                                </div>
+                                <div class="description">
+                                     <strong>PURAPY</strong><p>GOOD!</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#">
+                                <div class="thumbnail">
+                                    <img src="images/logo.jpg" />
+                                </div>
+                                <div class="description">
+                                    <strong>PURAPY</strong><p>GOOD!</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="aside-list">
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+                -->
+            
+            
+        
+</div>
+<br>
+<h2>PURAPY GOODS</h2>
+<p>A Journey of Fragrancer</p>
+<br>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="all_goods.jpg" style="width:100%">
+  <div class="text"><strong>PURAPY</strong></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="all_tea.jpg" style="width:100%">
+  <div class="text"><strong>PURAPY</strong></div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="tea.jpg" style="width:100%">
+  <div class="text"><strong>PURAPY</strong></div>
+</div>
+
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+        <footer id="main-footer">
+          <br>
+           <hr color="lightgray" size="1px">
+            <div class="footer_p"><p>we are PURAPYA <br><small>Journey of Fragrancer</small> <br>We are Happy !!!! <br>We are Happy !!!!</p></div>
+            
+        </footer>
+        
+       <script> 
+       $(document).ready(function(){
+           $(window).scroll(function(){
+               var imgsize =$(this).scrollTop();
+           if(imgsize>500){
+               $('#nava').css({
+                   position:'fixed',
+                   top:'0',
+//                   left:'540px' 
+               });
+                }
+               else {
+                   $('#nava').css("position","relative")
+               }
+            });    
+       });
+       </script>
+        
+</body>
+</html>
